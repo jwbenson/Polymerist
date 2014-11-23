@@ -2,7 +2,7 @@
   "name": "Polymerist",
   "version": "0.0.1",
   "description": "Polymer playground",
-  "main": "app.js",
+  "main": "src/app.js",
   "scripts": {
     "test": "mocha test"
   },

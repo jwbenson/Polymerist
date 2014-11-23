@@ -5,7 +5,9 @@
 	<script src="/bower_components/webcomponentsjs/webcomponents.min.js"></script>
     <link rel="import" href="/polymer/ready-element.html"/>
     <link rel="import" href="/polymer/ajax-element.html"/>
+    <link rel="import" href="/polymer/leaflet-element.html"/>
     <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <script src="/bower_components/leaflet/dist/leaflet.js"></script>
 	{{{ head }}}
 </head>
 <body>
@@ -18,7 +20,10 @@
     <div class="well">
         <ajax-element url="/test/"></ajax-element>
     </div>
-
+    <h1>External Lib (Leaflet)</h1>
+    <div class="well">
+        <leaflet-element></leaflet-element>
+    </div>
 	{{{ body }}}
 </div>
 {{{ scripts }}}
