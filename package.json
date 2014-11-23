@@ -18,9 +18,6 @@
   "homepage": "https://github.com/jwbenson/Polymerist",
   "dependencies": {
     "express": "~4.10.2",
-    "express-handlebars": "~0.5.2",
-    "express-hbs": "^0.7.11",
-    "express3-handlebars": "^0.5.2",
-    "mongodb": "~1.4.22"
+    "express-hbs": "^0.7.11"
   }
 }
