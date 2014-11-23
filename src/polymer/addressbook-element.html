@@ -1,0 +1,50 @@
+<link rel="import" href="/bower_components/polymer/polymer.html">
+<link rel="import" href="/bower_components/core-ajax/core-ajax.html">
+
+<polymer-element name="addressbook-element">
+    <template>
+        <core-ajax auto url="{{url}}" handleAs="json" on-core-response="{{ajaxResponse}}"></core-ajax><div class="panel panel-default">
+        <div class="panel">
+            <div class="panel-heading">
+                <h3 class="panel-title">{{name}}</h3>
+            </div>
+            <div class="panel-body">
+                {{company}}<br/>
+                {{phone}}<br/>
+                {{address}}
+                <div>
+                    <button type="button" class="btn btn-primary" on-click="{{prev}}">Prev</button>
+                    <button type="button" class="btn btn-default" on-click="{{next}}">Next</button>
+                </div>
+            </div>
+
+         </div>
+        </div>
+    </template>
+    <script>
+        Polymer({
+            index: 0,
+            url: '/addressbook',
+            prev: function () {
+                this.index--;
+                if (this.index < 0) {
+                    this.index = 99;
+                }
+                this.url = '/addressbook?id=' + this.index;
+            },
+            next: function () {
+                this.index++;
+                if (this.index > 99) {
+                    this.index = 0;
+                }
+                this.url = '/addressbook?id=' + this.index;
+            },
+            ajaxResponse: function(event, data) {
+                this.name = data.response.Name;
+                this.address = data.response.Address;
+                this.company = data.response.Company;
+                this.phone = data.response.Phone;
+            }
+        });
+    </script>
+</polymer-element>
