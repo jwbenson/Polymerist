@@ -1,0 +1,43 @@
+<link rel="import" href="/bower_components/polymer/polymer.html">
+<link rel="import" href="/bower_components/core-ajax/core-ajax.html">
+
+<polymer-element name="ajax-element">
+    <template>
+        <core-ajax auto url="{{url}}" handleAs="json" on-core-response="{{ajaxResponse}}"></core-ajax>
+        <h4>{{collectionSize}} {{name}}</h4>
+        <ul id="scroller" style="max-height: 200px; overflow: scroll;" on-scroll="{{listScroll}}">
+             <template repeat="{{ collection }}">
+             <li>
+                {{name}}
+             </li>
+            </template>
+        </ul>
+    </template>
+    <script>
+        Polymer({
+            collection: null,
+            url: '/random',
+            listScroll: function (event){
+                var scrollTop = this.$.scroller.scrollTop;
+                var outerHeight = this.$.scroller.offsetHeight;
+                var scrollHeight = this.$.scroller.scrollHeight;
+
+                if (scrollTop + outerHeight >= scrollHeight) {
+                    this.url = '/random?skip=' + this.collection.length + '&take=100';
+                }
+            },
+            ajaxResponse: function(event, data) {
+                this.name = data.response.name;
+
+                if (!this.collection) {
+                    this.collection = data.response.collection;
+                }
+                else {
+                    this.collection = this.collection.concat(data.response.collection);
+                }
+
+                this.collectionSize = this.collection.length
+            }
+        });
+    </script>
+</polymer-element>

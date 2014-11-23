@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>{{title}}</title>
+	<script src="/bower_components/webcomponentsjs/webcomponents.min.js"></script>
+    <link rel="import" href="/polymer/ready-element.html"/>
+    <link rel="import" href="/polymer/ajax-element.html"/>
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+	{{{ head }}}
+</head>
+<body>
+<div class="container">
+    <h1>JS On Ready</h1>
+    <div class="well">
+        <ready-element></ready-element>
+    </div>
+    <h1>Core-Ajax / Endless Scroll</h1>
+    <div class="well">
+        <ajax-element url="/test/"></ajax-element>
+    </div>
+
+	{{{ body }}}
+</div>
+{{{ scripts }}}
+</body>
+</html>

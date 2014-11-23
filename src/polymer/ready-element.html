@@ -1,0 +1,15 @@
+<link rel="import" href="/bower_components/polymer/polymer.html">
+
+<polymer-element name="ready-element">
+    <template>
+        <span id="el">Not ready...</span>
+    </template>
+    <script>
+        Polymer({
+            data: [],
+            ready: function() {
+                this.$.el.textContent = "ready";
+            }
+        });
+    </script>
+</polymer-element>

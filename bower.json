@@ -1,0 +1,25 @@
+{
+  "name": "Polymerist",
+  "version": "0.0.1",
+  "homepage": "https://github.com/jwbenson/Polymerist",
+  "authors": [
+    "Jason Benson <jason@jasonbenson.com>"
+  ],
+  "description": "Polymer playground",
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#~0.5.1",
+	"core-ajax": "Polymer/core-ajax#0.5.1",
+	"bootstrap": "~3.0.0"
+  }
+}

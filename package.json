@@ -1,0 +1,26 @@
+{
+  "name": "Polymerist",
+  "version": "0.0.1",
+  "description": "Polymer playground",
+  "main": "app.js",
+  "scripts": {
+    "test": "mocha test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jwbenson/Polymerist.git"
+  },
+  "author": "Jason Benson <jason@jasonbenson.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jwbenson/Polymerist/issues"
+  },
+  "homepage": "https://github.com/jwbenson/Polymerist",
+  "dependencies": {
+    "express": "~4.10.2",
+    "express-handlebars": "~0.5.2",
+    "express-hbs": "^0.7.11",
+    "express3-handlebars": "^0.5.2",
+    "mongodb": "~1.4.22"
+  }
+}
